@@ -3,9 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+import { DatacreditLibModule } from '@bdb/datacredit';
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    DatacreditLibModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [],
