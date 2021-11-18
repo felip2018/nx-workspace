@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bdb-library/datacredit": ["libs/datacredit/src/index.ts"],
+      "@bdb/datacredit": ["libs/datacredit-lib/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

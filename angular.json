@@ -1,6 +1,48 @@
 {
   "version": 1,
   "projects": {
+    "datacredit-lib": {
+      "projectType": "library",
+      "root": "libs/datacredit-lib",
+      "sourceRoot": "libs/datacredit-lib/src",
+      "prefix": "bdb-library",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/datacredit-lib"],
+          "options": {
+            "project": "libs/datacredit-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/datacredit-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/datacredit-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/datacredit-lib"],
+          "options": {
+            "jestConfig": "libs/datacredit-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/datacredit-lib/src/**/*.ts",
+              "libs/datacredit-lib/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "single": {
       "projectType": "application",
       "root": "apps/single",
